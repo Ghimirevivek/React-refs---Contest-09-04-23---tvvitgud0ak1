@@ -12,11 +12,11 @@ const App = () => {
     setPass(e.target.value)
   }
   const handleSubmit = () => {
-    if (email === '' && password === '') {
+    if (email === '' && pass === '') {
       inputEmailRef.current.focus()
     } else if (email === '') {
       inputEmailRef.current.focus()
-    } else if (password === '') {
+    } else if (pass === '') {
       inputPasswordRef.current.focus()
     }
   }
