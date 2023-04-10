@@ -16,18 +16,18 @@ const App = () => {
   const handleSubmit = () => {
     if (email.trim() === '') {
       inputEmailRef.current.focus()
+      setDisplayPass(pass)
+      // setEmail('')
     } else if (pass.trim() === '') {
       inputPasswordRef.current.focus()
+      setDisplayEmail(email)
+      // setPass('')
     } else {
       setDisplayEmail(email)
       setDisplayPass(pass)
-      document.getElementById('emailText').innerHTML = `Your Email: ${email}`
-      document.getElementById(
-        'passwordText'
-      ).innerHTML = `Your Password: ${pass}`
+      setPass('')
+      setEmail('')
     }
-    // setPass('')
-    // setEmail('')
   }
   return (
     <div id="main">
