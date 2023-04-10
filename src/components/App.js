@@ -22,8 +22,8 @@ const App = () => {
       setDisplayEmail(email)
       setDisplayPass(pass)
     }
-    setPass('')
-    setEmail('')
+    // setPass('')
+    // setEmail('')
   }
   return (
     <div id="main">
