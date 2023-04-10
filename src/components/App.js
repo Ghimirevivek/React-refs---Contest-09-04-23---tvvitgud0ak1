@@ -21,6 +21,10 @@ const App = () => {
     } else {
       setDisplayEmail(email)
       setDisplayPass(pass)
+      document.getElementById('emailText').innerHTML = `Your Email: ${email}`
+      document.getElementById(
+        'passwordText'
+      ).innerHTML = `Your Password: ${pass}`
     }
     // setPass('')
     // setEmail('')
