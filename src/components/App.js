@@ -5,6 +5,8 @@ const App = () => {
   const inputPasswordRef = useRef(null)
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
+  const [displayEmail, setDisplayEmail] = useState('')
+  const [displayPass, setDisplayPass] = useState('')
   const emailChange = (e) => {
     setEmail(e.target.value)
   }
@@ -12,13 +14,16 @@ const App = () => {
     setPass(e.target.value)
   }
   const handleSubmit = () => {
-    if (email === '' && pass === '') {
+    if (email.trim() === '') {
       inputEmailRef.current.focus()
-    } else if (email === '') {
-      inputEmailRef.current.focus()
-    } else if (pass === '') {
+    } else if (pass.trim() === '') {
       inputPasswordRef.current.focus()
+    } else {
+      setDisplayEmail(email)
+      setDisplayPass(pass)
     }
+    setPass('')
+    setEmail('')
   }
   return (
     <div id="main">
@@ -44,8 +49,8 @@ const App = () => {
         Submit
       </button>
       <br />
-      <p id="emailText">Your Email : {email}</p>
-      <p id="passwordText">Your Password : {pass}</p>
+      <p id="emailText">Your Email : {displayEmail}</p>
+      <p id="passwordText">Your Password : {displayPass}</p>
     </div>
   )
 }
